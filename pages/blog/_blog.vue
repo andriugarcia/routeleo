@@ -1,6 +1,7 @@
 <template>
   <article>
     <h1>{{blogPost.title}}</h1>
+    <h2>{{blogPost.description}}</h2>
     <div>{{blogPost.body}}</div>
   </article>
 </template>
