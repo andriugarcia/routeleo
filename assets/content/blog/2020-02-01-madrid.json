@@ -3,5 +3,5 @@
   "cover": "/img/madrid.jpg",
   "date": "2020-02-01T16:35:04.809Z",
   "description": "Probando a crear un blog",
-  "body": "Esto lo estoy haciendo con HTML supongo\n\n`var x = new x;`\n\n* Esta es así okay\n\n  **Okay**"
+  "body": "\nEsto lo estoy haciendo con HTML supongo\n\n`var x = new x;`\n\n* Esta es así okay\n\n  **Okay**\n\n![Ciudad de Madrid](/img/madrid.jpg \"Madrid\")\n"
 }
