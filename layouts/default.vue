@@ -5,8 +5,7 @@
         img(src="@/assets/Routeleo.png", style="height: 40px")
         v-icon mdi-menu
     v-content
-      v-container
-        nuxt
+      nuxt
 </template>
 
 <script>

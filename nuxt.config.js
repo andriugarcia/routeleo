@@ -43,6 +43,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -64,7 +65,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit'
   ],
-  
+
   markdownit: {
     injected: true,
   },

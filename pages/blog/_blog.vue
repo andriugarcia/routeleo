@@ -1,8 +1,11 @@
 <template>
   <article>
-    <h1>{{blogPost.title}}</h1>
-    <h2>{{blogPost.description}}</h2>
-    <div v-html="$md.render(blogPost.body)"></div>
+    <img :src="blogPost.cover">
+    <div class="pa-4">
+        <h1>{{blogPost.title}}</h1>
+        <h2>{{blogPost.description}}</h2>
+        <div v-html="$md.render(blogPost.body)" style="width: 100%"></div>
+    </div>
   </article>
 </template>
 
