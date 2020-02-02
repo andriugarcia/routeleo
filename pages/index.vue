@@ -1,9 +1,12 @@
 <template lang="pug">
-  #index
-    v-card.pa-3(style="border-radius: 24px")
-      v-text-field(solo, flat, placeholder="Origen", style="font-size: 1.2em")
-      v-divider
-      v-text-field(solo, flat, placeholder="Destino", style="font-size: 1.2em")
+  #index.pa-4.pt-12
+    v-card.mt-3.pa-3(style="border-radius: 24px")
+      v-autocomplete(v-model="idaSearch", :items="cities", color="green", solo, flat, placeholder="Origen", style="font-size: 1.2em")
+      v-layout(align-center)
+        v-divider
+        v-btn(text, small, @click="invertCities")
+          v-icon(color="grey darken-2") mdi-swap-vertical
+      v-autocomplete(v-model="vueltaSearch", :items="cities", color="green", solo, flat, placeholder="Destino", style="font-size: 1.2em")
       v-layout.px-4(justify-space-between)
         v-menu(v-model="menuida", offset-y)
           template(v-slot:activator="{ on }")
@@ -14,7 +17,7 @@
           template(v-slot:activator="{ on }")
             .grey--text(style="font-size: 1.2em", v-on="on") {{ vueltaComputed }}
           v-date-picker(v-model="vuelta", color="teal", no-title, scrollable, :allowed-dates="allowedDates", @input="menuvuelta = false", locale="es")
-            v-btn(outlined, color="red", @click="vuelta = null") Quitar vuelta
+            v-btn(outlined, color="red", @click="vuelta = null", block) Quitar vuelta
       v-btn.mt-4.font-weight-bold(rounded, block, dark, color="teal") Busca el mejor precio
     v-layout.mt-6(justify-space-between, align-center)
       b Los más buscados
@@ -41,6 +44,9 @@ import moment from 'moment'
 export default {
   data() {
     return {
+      idaSearch: "",
+      vueltaSearch: "",
+      cities: ["Granada", "Madrid", "Varsovia"],
       ida: new Date().toISOString().substr(0, 10),
       vuelta: null,
       menuida: false,
@@ -49,7 +55,12 @@ export default {
   },
 
 methods: {
-  allowedDates (val) {return new Date(val) >= new Date(this.ida)}
+  allowedDates (val) {return new Date(val) >= new Date(this.ida)},
+  invertCities() {
+    let aux = this.idaSearch
+    this.idaSearch = this.vueltaSearch
+    this.vueltaSearch = aux
+  }
 },
 
 computed: {

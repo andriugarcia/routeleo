@@ -68,6 +68,10 @@ export default {
 
   markdownit: {
     injected: true,
+    use: [
+      ['markdown-it-style', {
+      }]
+    ]
   },
   /*
   ** Axios module configuration

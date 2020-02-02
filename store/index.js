@@ -1,11 +1,15 @@
 export const state = () => ({
     blogPosts: [],
+    blog: ""
   });
   
   export const mutations = {
     setBlogPosts(state, list) {
       state.blogPosts = list;
     },
+    setBlog(state, blog) {
+        state.blog = blog
+    }
   };
   
   export const actions = {
