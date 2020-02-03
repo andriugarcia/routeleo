@@ -1,13 +1,13 @@
 <template lang="pug">
   #index.pa-4.pt-12
     v-card.mt-3.pa-3(style="border-radius: 24px")
-      v-autocomplete(v-model="idaSearch", :items="cities", color="green", solo, flat, placeholder="Origen", style="font-size: 1.2em")
+      v-autocomplete(v-model="idaSearch", :items="cities", hide-details, color="green", solo, flat, placeholder="Origen", style="font-size: 1.2em")
       v-layout(align-center)
         v-divider
-        v-btn(text, small, @click="invertCities")
+        v-btn.ml-2(text, small, @click="invertCities")
           v-icon(color="grey darken-2") mdi-swap-vertical
-      v-autocomplete(v-model="vueltaSearch", :items="cities", color="green", solo, flat, placeholder="Destino", style="font-size: 1.2em")
-      v-layout.px-4(justify-space-between)
+      v-autocomplete(v-model="vueltaSearch", :items="cities", hide-details, color="green", solo, flat, placeholder="Destino", style="font-size: 1.2em")
+      v-layout.px-4.mt-3(justify-space-between)
         v-menu(v-model="menuida", offset-y)
           template(v-slot:activator="{ on }")
             .grey--text(style="font-size: 1.2em", v-on="on") {{ idaComputed }}
